@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NZWalks.API.Models.Domain;
 using static System.Net.Mime.MediaTypeNames;
+using Image = NZWalks.API.Models.Domain.Image;
 
 namespace NZWalks.API.Data
 {
@@ -17,8 +18,10 @@ namespace NZWalks.API.Data
 
         public DbSet<Walk> Walks { get; set; }
 
+        public DbSet<Image> Images { get; set; }
+
         // Fix: Replace MediaTypeNames.Image with the correct Image type from your domain models
- 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
